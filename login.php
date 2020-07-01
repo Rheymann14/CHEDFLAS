@@ -1,4 +1,18 @@
-<?php include('server.php') ?>
+<?php include('server.php'); 
+
+if (isset($_SESSION['usertype'])) {
+  if ($_SESSION['usertype'] == 'school') {
+    header('location: download_School.php');
+  } else if ($_SESSION['usertype'] == 'supervisor') {
+    header('location: supervisorend.php');
+  } else if ($_SESSION['usertype'] == 'admin' ) {
+    header('location: index.php');
+  } else {
+    session_destroy();
+    header("location: login.php");
+  }
+}
+?>
 <html>
 
 <head>

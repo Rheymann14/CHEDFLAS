@@ -1,0 +1,16 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.modal-fluid{
+
+  width: 1050px;
+  height: auto;
+  float: left;
+
+}
+
+
+

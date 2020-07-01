@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 $_SESSION['msg'] = "You must log in first";
 header('location: login.php');
 }
-if (isset($_SESSION['usertype']) {
+if (isset($_SESSION['usertype'])) {
   if ($_SESSION['usertype'] != 'admin') {
     header('location: login.php');
   }

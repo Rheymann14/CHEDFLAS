@@ -17,7 +17,7 @@ if (isset($_SESSION['usertype'])) {
   }
 } else {
   session_destroy();
-  header('location: supervisorend.php');
+  header('location: login.php');
 }
 
 if (isset($_GET['logout'])) {

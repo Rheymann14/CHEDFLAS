@@ -78,7 +78,7 @@ if (mysqli_num_rows($results) == 1) {
 $logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['usertype'] == 'Administrator') {
 $_SESSION['username'] = $username;
-$_SESSION['usertype'] = "Administrator";
+$_SESSION['usertype'] = "admin";
 header('location: index.php');
 
 }elseif ($logged_in_user['usertype'] == 'School') {

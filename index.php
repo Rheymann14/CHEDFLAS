@@ -14,17 +14,15 @@ if (isset($_SESSION['usertype'])) {
     header('location: download_School.php');
   } else if ($_SESSION['usertype'] == 'supervisor') {
     header('location: supervisorend.php');
-  } else if ($_SESSION['usertype'] == 'admin' ) {
-    header('location: index.php');
-  } else {
-    session_destroy();
-    header("location: login.php");
   }
+} else {
+  session_destroy();
+  header('location: supervisorend.php');
 }
 
 if (isset($_GET['logout'])) {
 session_destroy();
- unset($_SESSION['username']);
+//  unset($_SESSION['username']);
 header("location: login.php");
 }
 

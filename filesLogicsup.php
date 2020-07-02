@@ -122,7 +122,7 @@ if(isset($_POST['submit_feedback'])){
                     //mysqli_close($conn);
 
 
-$sql = "SELECT users.schoolname,files.name,files.program,files.filetype FROM files INNER JOIN users ON files.uii=users.school_id where files.program='$prog'" ;
+$sql = "SELECT files.uii,users.schoolname,files.name,files.program,files.filetype FROM files INNER JOIN users ON files.uii=users.school_id where files.program='$prog'" ;
 	$result7 = mysqli_query($conn, $sql);
 
 	$files = mysqli_fetch_all($result7, MYSQLI_ASSOC);

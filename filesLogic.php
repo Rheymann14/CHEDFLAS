@@ -28,9 +28,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $size = $_FILES['myfile']['size'];
 
     if (!in_array($extension, ['zip', 'pdf', 'docx'])) {
-        // echo "You file extension must be .zip, .pdf or .docx";
-         echo "<script>alert('You file extension must .docx, Currently the system cannot upload videos, kindly save the video link in a word file for upload ');              window.loaction='download_School.php'</script>";
-    } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
+        echo "You file extension must be .zip, .pdf or .docx";
+         // echo "<script>alert('You file extension must .docx, Currently the system cannot upload videos, kindly save the video link in a word file for upload ');              window.loaction='download_School.php'</script>";
+    } elseif ($_FILES['myfile']['size'] > 20000000) { // file shouldn't be larger than 1Megabyte
         echo "File too large!";
     } else {
         // move the uploaded (temporary) file to the specified destination
@@ -43,13 +43,13 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             if (mysqli_query($conn, $sql)) {
 				$_SESSION['docname'] = $filename;
 				
-                // header('location:phpword/test.php');
-                // echo "File uploaded successfully";
-                echo "<script>alert('File uploaded successfully');window.loaction='location:phpword/test.php'</script>";
+                header('location:phpword/test.php');
+                echo "File uploaded successfully";
+                // echo "<script>alert('File uploaded successfully');window.loaction='location:phpword/test.php'</script>";
             }
         } else {
-            // echo "Failed to upload file.";
-            echo "<script>alert('Failed to upload file');window.loaction='download_School.php'</script>";
+            echo "Failed to upload file.";
+            // echo "<script>alert('Failed to upload file');window.loaction='download_School.php'</script>";
         }
     }
 }

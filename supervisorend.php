@@ -134,7 +134,12 @@ $('#empTable').dataTable();
 </div>
 
 <div id="grad1">
- <a href="index.php?logout='1'" onclick="javascript:return confirm('Are you sure you want to log out?');" class="btn btn-danger " style="float: right; margin-right: 160px; margin-top: 50px;">Logout</a>
+<!--  <a href="index.php?logout='1'" onclick="javascript:return confirm('Are you sure you want to log out?');" class="btn btn-danger " style=" float: right; margin-right: 80px; margin-top: 50px;">Logout</a> -->
+
+
+
+<?php  if (isset($_SESSION['username'])) : ?>
+<a href="index.php?logout='1'" onclick="javascript:return confirm('Are you sure you want to log out?');" class="btn btn-danger" style="font-family: verdana;   float: right; margin-right: 130px; margin-top: 50px; color: white;" data-toggle="tooltip" title="Logout">WELCOME <strong><?php echo $_SESSION['username']; ?></strong><?php endif ?> </a>
 
 	<div class="wrapper">
 <div class="container-fluid">
@@ -147,7 +152,7 @@ $('#empTable').dataTable();
 <table class="table table-striped table-bordered table-responsive table-hover" 
 id="empTable" >
 <thead style="background-color: #0c2245; color: #fff;" >
-
+<th>UII</th>
 <th>School Name</th>
 <th>Filename</th>
 <!--<th>size (in mb)</th>-->
@@ -162,7 +167,7 @@ id="empTable" >
 
 <tr>
 
-
+<td><?php echo $file['uii']; ?></td>
 <td><?php echo $file['schoolname']; ?></td>
 <td><?php echo $file['name']; $_SESSION['filename'] = $file['name']; ?></td>
 <!--<td><?php //echo floor($file['size'] / 1000) . ' KB'; ?></td>-->

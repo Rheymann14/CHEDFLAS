@@ -14,7 +14,7 @@ if (isset($_SESSION['usertype'])) {
     header('location: download_School.php');
   } else if ($_SESSION['usertype'] == 'supervisor') {
     header('location: supervisorend.php');
-  } else if ($_SESSION['usertype'] == 'admin' ) {
+  } else if ($_SESSION['usertype'] == 'Administrator' ) {
     header('location: index.php');
   } else {
     session_destroy();
